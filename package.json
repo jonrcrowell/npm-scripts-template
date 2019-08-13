@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test -u bdd -R spec",
-    "pretest": "echo \"Runs before the test script\"",
+    "pretest": "npm run stop",
     "posttest": "echo \"Runs after the test script\"",
     "start": "node index.js",
     "start:dev": "node index.js 4050",
@@ -13,7 +13,14 @@
     "restart": "echo \"Running restart script\"",
     "whatever": "echo \"A script that runs whatever (to demo pre and post hooks)\"",
     "postwhatever": "echo \"Runs after the whatever script (note that the order of the scripts doesn't matter)\"",
-    "prewhatever": "echo \"Runs before the whatever script\""
+    "prewhatever": "echo \"Runs before the whatever script\"",
+    "format": "prettier \"./**/*.{js,html}\" --write",
+    "lint": "eslint \"./**/*.{js,jsx}\" --quiet",
+    "compile": "npm run compile:coffee && npm run compile:ts",
+    "precompile": "npm run clean",
+    "compile:coffee": "coffee --compile --output ./lib ./src/coffeescripts",
+    "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
+    "clean": "rimraf lib/*"
   },
   "keywords": [
     "npm",
@@ -27,11 +34,14 @@
     "koa": "^2.7.0"
   },
   "devDependencies": {
+    "coffee-script": "^1.12.7",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "mocha": "^6.2.0",
     "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
     "should": "^13.2.3",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "typescript": "^3.5.3"
   }
 }
