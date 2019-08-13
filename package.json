@@ -5,10 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test -u bdd -R spec",
+    "pretest": "echo \"Runs before the test script\"",
+    "posttest": "echo \"Runs after the test script\"",
     "start": "node index.js",
+    "start:dev": "node index.js 4050",
     "stop": "echo \"Running stop script\"",
     "restart": "echo \"Running restart script\"",
-    "start:dev": "echo \"Running custom start:dev script\""
+    "whatever": "echo \"A script that runs whatever (to demo pre and post hooks)\"",
+    "postwhatever": "echo \"Runs after the whatever script (note that the order of the scripts doesn't matter)\"",
+    "prewhatever": "echo \"Runs before the whatever script\""
   },
   "keywords": [
     "npm",
@@ -22,7 +27,11 @@
     "koa": "^2.7.0"
   },
   "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
     "mocha": "^6.2.0",
-    "should": "^13.2.3"
+    "prettier": "^1.18.2",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   }
 }
