@@ -16,11 +16,14 @@
     "prewhatever": "echo \"Runs before the whatever script\"",
     "format": "prettier \"./**/*.{js,html}\" --write",
     "lint": "eslint \"./**/*.{js,jsx}\" --quiet",
-    "compile": "npm run compile:coffee && npm run compile:ts",
+    "compile": "npm run compile:coffee && npm run compile:ts && npm run compile:less",
     "precompile": "npm run clean",
     "compile:coffee": "coffee --compile --output ./lib ./src/coffeescripts",
     "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
-    "clean": "rimraf lib/*"
+    "clean": "rimraf lib/*",
+    "compile:less": "lessc client/less/demo.less public/css/site.css",
+    "build:bundle": "browserify ./client/js/app.js -o ./public/js/bundles.js",
+    "build:uglify": "uglifyjs ./client/js/app.js -mc -o ./public/js/out.min.js"
   },
   "keywords": [
     "npm",
@@ -34,14 +37,18 @@
     "koa": "^2.7.0"
   },
   "devDependencies": {
+    "browserify": "^16.5.0",
     "coffee-script": "^1.12.7",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
+    "less": "^3.9.0",
     "mocha": "^6.2.0",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "uglify-js": "^3.6.0",
+    "uglifyjs": "^2.4.11"
   }
 }
