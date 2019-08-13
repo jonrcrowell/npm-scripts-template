@@ -55,5 +55,9 @@
     "typescript": "^3.5.3",
     "uglify-js": "^3.6.0",
     "uglifyjs": "^2.4.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
   }
 }
