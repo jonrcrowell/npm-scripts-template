@@ -24,7 +24,10 @@
     "compile:less": "lessc client/less/demo.less public/css/site.css",
     "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js",
     "watch:test": "npm run test -- -w -R min",
-    "watch:server": "nodemon --ignore client --ignore public index.js"
+    "watch:server": "nodemon --ignore client --ignore public index.js",
+    "version:breakingchange": "npm version major",
+    "version:feature": "npm version minor",
+    "version:fix": "npm version patch"
   },
   "keywords": [
     "npm",
