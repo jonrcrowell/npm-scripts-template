@@ -22,8 +22,7 @@
     "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
     "clean": "rimraf lib/*",
     "compile:less": "lessc client/less/demo.less public/css/site.css",
-    "build:bundle": "browserify ./client/js/app.js -o ./public/js/bundles.js",
-    "build:uglify": "uglifyjs ./client/js/app.js -mc -o ./public/js/out.min.js"
+    "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js"
   },
   "keywords": [
     "npm",
