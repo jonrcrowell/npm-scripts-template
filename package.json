@@ -22,7 +22,9 @@
     "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
     "clean": "rimraf lib/*",
     "compile:less": "lessc client/less/demo.less public/css/site.css",
-    "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js"
+    "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js",
+    "watch:test": "npm run test -- -w -R min",
+    "watch:server": "nodemon --ignore client --ignore public index.js"
   },
   "keywords": [
     "npm",
@@ -42,6 +44,7 @@
     "eslint-config-prettier": "^6.0.0",
     "less": "^3.9.0",
     "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
     "should": "^13.2.3",
