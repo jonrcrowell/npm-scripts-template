@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "graphql": {
+      "matchCondition": {
+        "route": "/graphql"
+      },
+      "backendUri": "https://hksjcb1.jcb.appserviceenvironment.net/api/build?code=zeprQ6cnvi6Z1QUuqLIHNdaeaRTbmO9bKGCtawtE91BlOwybQnrKrw=="
+    },
+    "static": {
+      "matchCondition": {
+        "route": "/static/{*restOfPath}"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/static/{restOfPath}"
+    },
+    "favicon": {
+      "matchCondition": {
+        "route": "/favicon.ico"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/favicon.ico"
+    },
+    "png": {
+      "matchCondition": {
+        "route": "/{pngfile}.png"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/{pngfile}.png"
+    },
+    "jpg": {
+      "matchCondition": {
+        "route": "/{jpgfile}.jpg"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/{jpgfile}.jpg"
+    },
+    "asset-manifest.json": {
+      "matchCondition": {
+        "route": "/asset-manifest.json"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/asset-manifest.json"
+    },
+    "manifest.json": {
+      "matchCondition": {
+        "route": "/manifest.json"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/manifest.json"
+    },
+    "service-worker": {
+      "matchCondition": {
+        "route": "/service-worker.js"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/service-worker.js"
+    },
+    "precache": {
+      "matchCondition": {
+        "route": "/precache-manifest.{ext}"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/precahce-manifest.{ext}"
+    },
+    "default": {
+      "matchCondition": {
+        "route": "/{*restOfPath}"
+      },
+      "backendUri": "https://blobhksjcb1.z21.web.core.windows.net/index.html"
+    }
+  }
+}
