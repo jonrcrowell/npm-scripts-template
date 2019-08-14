@@ -18,3 +18,6 @@ eslintrc.json
 
 George Ornbo, the author of Sams **Teach Yourself Node.js in 24 Hours** has a good blog post on utilities that help work with the file system in node:
 <https://shapeshed.com/working-with-filesystems-in-nodejs/>
+
+As suggested by George, this is an extremely useful search to find utilities that help with fs operations (that are also hopefully cross-platform compatible):
+<https://www.npmjs.com/search?q=keywords:filesystem>

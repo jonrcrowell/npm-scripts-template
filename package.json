@@ -26,7 +26,10 @@
     "version:breakingchange": "npm version major",
     "version:feature": "npm version minor",
     "version:fix": "npm version patch",
-    "push:origin": "git push --tags origin HEAD:master"
+    "push:origin": "git push --tags origin HEAD:master",
+    "prebuild:g7": "cd src/scripts && node configureProxies.js graphitti7",
+    "build:g7": "echo \"Build the production code\"",
+    "postbuild:g7": "cd src/scripts && node zipserver.js && echo \"deploy zip file to function && Deploy the client to blob storage\""
   },
   "keywords": [
     "npm",
@@ -40,10 +43,13 @@
     "koa": "^2.7.0"
   },
   "devDependencies": {
+    "archiver": "^3.1.1",
     "browserify": "^16.5.0",
     "coffee-script": "^1.12.7",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
+    "fstream": "^1.0.12",
+    "jszip": "^3.2.2",
     "less": "^3.9.0",
     "mocha": "^6.2.0",
     "nodemon": "^1.19.1",
@@ -51,6 +57,7 @@
     "rimraf": "^2.6.3",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
+    "tar": "^4.4.10",
     "typescript": "^3.5.3",
     "uglify-js": "^3.6.0",
     "uglifyjs": "^2.4.11"
