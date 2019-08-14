@@ -18,7 +18,7 @@
     "precompile": "npm run clean",
     "compile:coffee": "coffee --compile --output ./lib ./src/coffeescripts",
     "compile:ts": "tsc --outDir ./lib --module commonjs ./src/typescripts/tsCode.ts",
-    "clean": "rimraf lib/*",
+    "clean": "rimraf zipdeploy/*",
     "compile:less": "lessc client/less/demo.less public/css/site.css",
     "build:bundle": "browserify ./client/js/app.js | uglifyjs -mc > ./public/js/bundle.js",
     "watch:test": "npm run test -- -w -R min",
@@ -27,7 +27,7 @@
     "version:feature": "npm version minor",
     "version:fix": "npm version patch",
     "push:origin": "git push --tags origin HEAD:master",
-    "prebuild:g7": "cd src/scripts && node configureProxies.js graphitti7",
+    "prebuild:g7": "npm run clean && cd src/scripts && node configureProxies.js graphitti7",
     "build:g7": "echo \"Build the production code\"",
     "postbuild:g7": "cd src/scripts && node zipserver.js && echo \"deploy zip file to function && Deploy the client to blob storage\""
   },
