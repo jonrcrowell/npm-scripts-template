@@ -27,9 +27,9 @@
     "version:feature": "npm version minor",
     "version:fix": "npm version patch",
     "push:origin": "git push --tags origin HEAD:master",
-    "prebuild:g7": "npm run clean && cd src/scripts && node configureProxies.js graphitti7",
-    "build:g7": "echo \"Build the production code\"",
-    "postbuild:g7": "cd src/scripts && node zipserver.js && echo \"deploy zip file to function && Deploy the client to blob storage\""
+    "predeploy:g7": "npm run clean && cd src/scripts && node configureProxies.js graphitti7",
+    "deploy:g7": "echo \"Build the production code\"",
+    "postdeploy:g7": "cd src/scripts && node zipserver.js && echo \"deploy zip file to function && Deploy the client to blob storage\""
   },
   "keywords": [
     "npm",
