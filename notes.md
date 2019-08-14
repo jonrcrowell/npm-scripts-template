@@ -15,3 +15,6 @@ After installing eslint, I need to add an eslintrc file. It has to have the .jso
 ```
 eslintrc.json
 ```
+
+George Ornbo, the author of Sams **Teach Yourself Node.js in 24 Hours** has a good blog post on utilities that help work with the file system in node:
+<https://shapeshed.com/working-with-filesystems-in-nodejs/>

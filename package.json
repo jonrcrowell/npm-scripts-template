@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test -u bdd -R spec",
-    "pretest": "npm run stop",
-    "posttest": "echo \"Runs after the test script\"",
     "start": "node index.js",
     "start:dev": "node index.js 4050",
     "stop": "echo \"Running stop script\"",
@@ -27,7 +25,8 @@
     "watch:server": "nodemon --ignore client --ignore public index.js",
     "version:breakingchange": "npm version major",
     "version:feature": "npm version minor",
-    "version:fix": "npm version patch"
+    "version:fix": "npm version patch",
+    "push:origin": "git push --tags origin HEAD:master"
   },
   "keywords": [
     "npm",
