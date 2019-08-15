@@ -26,7 +26,6 @@
     "version:breakingchange": "npm version major",
     "version:feature": "npm version minor",
     "version:fix": "npm version patch",
-    "push:origin": "git push --tags origin HEAD:master",
     "predeploy:g7": "npm run clean && cd src/scripts && node configureProxies.js graphitti7",
     "deploy:g7": "echo \"Build the production code\"",
     "postdeploy:g7": "cd src/scripts && node zipserver.js && echo \"deploy zip file to function && Deploy the client to blob storage\""

@@ -40,6 +40,6 @@ archive.on('error', function (err) {
 // pipe archive data to the file
 archive.pipe(output);
 
-archive.directory('../../public')
+archive.directory('../../public', false)  // add the second argument "false" to prevent directories in the path from being included in the resulting zip
 
 archive.finalize();
