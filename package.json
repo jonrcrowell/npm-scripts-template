@@ -48,7 +48,7 @@
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "fstream": "^1.0.12",
-    "jszip": "^3.2.2",
+    "jszip": "^3.7.0",
     "less": "^3.9.0",
     "mocha": "^6.2.0",
     "nodemon": "^1.19.1",
